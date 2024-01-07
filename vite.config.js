@@ -13,7 +13,9 @@ export default defineConfig({
       resolvers: [VantResolver()]
     })
   ],
+
   resolve: {
+    extensions: ['.mjs'],
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }

@@ -1,11 +1,9 @@
 <template>
   <div>
-    <index></index>
+    <RouterView></RouterView>
   </div>
 </template>
 
-<script setup>
-import index from '@/views/login/index.vue'
-</script>
+<script setup></script>
 
 <style lang="scss" scoped></style>

@@ -1,5 +1,5 @@
 <template>
-  <div>hhh</div>
+  <div>export</div>
 </template>
 
 <script setup></script>

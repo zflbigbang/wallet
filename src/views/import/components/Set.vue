@@ -1,7 +1,12 @@
 <template>
-  <Header title="创建 HD 钱包"></Header>
   <div class="registration-page">
     <van-cell-group v-model="formData">
+      <van-field
+        v-model="formData.username"
+        :label="mark"
+        :placeholder="mark"
+        clearable
+      ></van-field>
       <van-field
         v-model="formData.username"
         label="钱包名称"
@@ -25,24 +30,15 @@
       ></van-field>
     </van-cell-group>
   </div>
-  <div class="text">
-    <span>*密码用于保护您的私钥，建议设置足够强度的密码</span>
-    <span>*钱包密码丢失将无法找回，请务必牢记您设置的密码</span>
-  </div>
-  <div class="button">
-    <Button text="确认创建" @click="submitForm"></Button>
-  </div>
 </template>
 
 <script setup>
-import Header from '@/components/Header.vue'
-import Button from '@/components/Button.vue'
 import { ref } from 'vue'
 import { showConfirmDialog } from 'vant'
 import 'vant/es/dialog/style'
 import { useRouter } from 'vue-router'
 const router = useRouter()
-
+defineProps(['mark'])
 const formData = ref({
   username: '',
   password: '',

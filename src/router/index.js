@@ -49,4 +49,12 @@ const router = createRouter({
   ]
 })
 
+// router.beforeEach((to, from, next) => {
+//   if (localStorage.isLogin === 'login') {
+//     next()
+//   } else {
+//     next('/')
+//   }
+// })
+
 export default router

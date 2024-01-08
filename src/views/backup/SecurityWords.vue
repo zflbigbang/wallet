@@ -2,10 +2,13 @@
   <Header :title="title"></Header>
   <div class="main">
     <div class="head">请认真阅读如下说明</div>
-    <hr />
-    <div v-for="item in items" class="text">
-      <div class="circle"></div>
-      <div class="span">{{ item }}</div>
+
+    <div><hr /></div>
+
+    <div class="text">
+      <div v-for="item in items">
+        <div class="span">{{ item }}</div>
+      </div>
     </div>
   </div>
   <div class="button">
@@ -38,31 +41,29 @@ const goBackUp = () => {
 .main {
   width: 340px;
   height: 320px;
-  background-color: #f0f0f0;
+  background-color: #ffffff;
   margin: auto;
   margin-top: 30px;
   text-align: center;
   overflow: hidden;
+
   .head {
     margin-top: 10px;
     font-weight: 600;
   }
+
   .text {
     display: flex;
+    flex-direction: column;
     text-align: center;
-    margin-top: 20px;
-    .circle {
-      width: 10px;
-      height: 10px;
-      border-radius: 10px;
-      background-color: #ffca28;
-    }
+    align-items: center;
+    color: black;
   }
 }
 .button {
+  margin-top: 40px;
   display: flex;
   flex-direction: column;
-  margin-top: 40px;
   align-items: center;
 }
 </style>

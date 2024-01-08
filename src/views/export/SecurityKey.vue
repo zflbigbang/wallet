@@ -2,14 +2,17 @@
   <Header :title="title"></Header>
   <div class="main">
     <div class="head">请认真阅读如下说明</div>
-    <hr />
-    <div v-for="item in items" class="text">
-      <div class="circle"></div>
-      <div class="span">{{ item }}</div>
+
+    <div><hr /></div>
+
+    <div class="text">
+      <div v-for="item in items">
+        <div class="span">{{ item }}</div>
+      </div>
     </div>
   </div>
   <div class="button">
-    <Button text="开始导出" @click="goBackUp"></Button>
+    <Button text="开始导出" @click="goKey"></Button>
     <Button text="暂不导出" color=""></Button>
   </div>
 </template>
@@ -27,7 +30,7 @@ const items = reactive([
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
-const goBackUp = () => {
+const goKey = () => {
   router.push('/export')
 }
 </script>
@@ -36,29 +39,29 @@ const goBackUp = () => {
 .main {
   width: 340px;
   height: 320px;
-  background-color: #f0f0f0;
+  background-color: #ffffff;
   margin: auto;
   margin-top: 30px;
   text-align: center;
   overflow: hidden;
+
   .head {
     margin-top: 10px;
     font-weight: 600;
   }
+
   .text {
     display: flex;
+    flex-direction: column;
     text-align: center;
-    margin-top: 20px;
-    .circle {
-      width: 10px;
-      height: 10px;
-      border-radius: 10px;
-      background-color: #ffca28;
-    }
+    align-items: center;
+    color: black;
   }
 }
 .button {
   margin-top: 40px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 </style>

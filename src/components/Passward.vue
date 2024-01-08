@@ -20,8 +20,7 @@
 
 <script setup>
 import { ref, watch } from 'vue'
-import { useRouter } from 'vue-router'
-const router = useRouter()
+
 const value = ref('')
 const show = defineProps(['isShow'])
 const showKeyboard = ref(false)
@@ -29,8 +28,11 @@ const emit = defineEmits(['close'])
 watch(showKeyboard, () => {
   if (showKeyboard.value == false) {
     if (value.value === '123456') {
+      emit('close', true)
+    } else {
+      emit('close', false)
     }
-    emit('close')
+    value.value = ''
   }
 })
 </script>

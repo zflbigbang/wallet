@@ -28,7 +28,7 @@ import { useRouter } from 'vue-router'
 
 const router = useRouter()
 const goBackUp = () => {
-  router.push('/backup')
+  router.push('/export')
 }
 </script>
 

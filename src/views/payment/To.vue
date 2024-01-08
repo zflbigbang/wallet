@@ -32,13 +32,31 @@ import Button from '@/components/Button.vue'
 import Passward from '@/components/Passward.vue'
 import First from './components/First.vue'
 import { ref } from 'vue'
+
+import { showDialog } from 'vant'
+import 'vant/es/dialog/style'
+
 const isShow = ref(false)
 const left = ref('输入转出数量' + '   当前余额：12.34567890 BTC ')
 const transfer = () => {
   isShow.value = true
 }
-function close() {
-  console.log('hhh')
+function close(flag) {
+  if (flag) {
+    showDialog({
+      title: '转出成功',
+      message: '您已成功转出 0.123456 BTC！等待区块链确认后即可到账。'
+    }).then(() => {
+      // on close
+    })
+  } else {
+    showDialog({
+      title: '密码错误',
+      message: '请重新输入'
+    }).then(() => {
+      // on close
+    })
+  }
   isShow.value = false
 }
 </script>

@@ -10,7 +10,7 @@
 
       <div class="import">
         <span>已有 HD 钱包？</span>
-        <span>点此导入钱包</span>
+        <span @click="im">点此导入钱包</span>
       </div>
     </div>
   </div>
@@ -23,6 +23,9 @@ const router = useRouter()
 
 const create = () => {
   router.push('/create')
+}
+const im = () => {
+  router.push('/import')
 }
 </script>
 

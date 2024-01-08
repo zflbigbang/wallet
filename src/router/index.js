@@ -41,6 +41,10 @@ const router = createRouter({
     {
       path: '/to',
       component: () => import('../views/payment/To.vue')
+    },
+    {
+      path: '/import',
+      component: () => import('../views/import/Import.vue')
     }
   ]
 })

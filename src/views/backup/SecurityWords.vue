@@ -60,7 +60,9 @@ const goBackUp = () => {
   }
 }
 .button {
+  display: flex;
+  flex-direction: column;
   margin-top: 40px;
-  text-align: center;
+  align-items: center;
 }
 </style>
